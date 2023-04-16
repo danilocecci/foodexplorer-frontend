@@ -7,9 +7,11 @@ import { MealCard } from '../../components/MealCard'
 
 
 export function Home() {
+  let admin = false
+
   return (
     <Container className='content'>
-      <Header />
+      <Header admin={admin} />
       <div className='content'>
         <Banner className='banner'/>
         <div className='meals'>
@@ -29,8 +31,8 @@ export function Home() {
             <MealCard className='mealCard'/>
           </div>
         </div>
-      </div>
       <Footer />
+      </div>
     </Container>
   )
 }

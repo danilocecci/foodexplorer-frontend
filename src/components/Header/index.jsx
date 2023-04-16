@@ -1,15 +1,27 @@
 import { Container } from "./styles"
 
-import menuImg from '../../assets/menu.svg'
+import menuSvg from '../../assets/menu.svg'
+import receiptSvg from '../../assets/receipt.svg'
+import closeSvg from '../../assets/close.svg'
 import { Logo } from '../Logo'
-import receiptImg from '../../assets/receipt.svg'
 
-export function Header(){
+export function Header({menu, admin}){
   return(
     <Container>
-      <img src={menuImg} alt="Botão de menu" />
-      <Logo />
-      <img src={receiptImg} alt="Botão de pedidos" />
+      {!admin ? 
+      menu ? <div className='menu'><img src={closeSvg} alt="Botão de menu"  />Menu</div>
+      : <>
+        <img src={menuSvg} alt="Botão de menu" />
+        <Logo />
+        <span>admin</span>
+      </> :
+      menu ? <div className='menu'><img src={closeSvg} alt="Botão de menu"  />Menu</div>
+      : <>
+        <img src={menuSvg} alt="Botão de menu" />
+        <Logo />
+        <img src={receiptSvg} alt="Botão de pedidos" />
+      </>
+      }
     </Container>
   )
 }

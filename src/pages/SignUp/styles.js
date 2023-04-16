@@ -19,7 +19,7 @@ export const Container = styled.div`
     height: 4.3rem;
   }
 
-  input,
+  > div,
   button {
     margin-bottom: 3.2rem;
   }

@@ -7,20 +7,42 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 0.8rem;
 
-  > input {
+  .inputWrapper {
+    :focus-within {
+      outline: ${({ theme }) => theme.COLORS.OUTLINE} solid 0.2rem;
+    }
+
     width: 100%;
-    background-color: ${({ theme }) => theme.COLORS.INPUTBACKGROUND};
 
-    border: none;
+    display: flex;
+
+    padding: 1.6rem 1.4rem;
+
     border-radius: 0.8rem;
+    background-color: ${({ theme }) => theme.COLORS.INPUTBACKGROUND};
+  }
 
-    padding: 1.2rem;
+  .inputWrapper,
+  input {
+    background-color: ${({ theme }) => theme.COLORS.INPUTBACKGROUND};
+  }
+
+  .inputWrapper > img {
+    padding-right: 1.6rem;
+  }
+
+  .inputWrapper > input {
+    width: 100%;
+    border: none;
 
     font-family: ${({ theme }) => theme.FONT.ROBOTO};
     color: ${({ theme }) => theme.COLORS.SECONDARYWHITE};
 
     :focus {
-      outline: ${({ theme }) => theme.COLORS.OUTLINE} solid 0.2rem;
+      outline: none;
     }
+    /* :focus {
+      outline: ${({ theme }) => theme.COLORS.OUTLINE} solid 0.2rem;
+    } */
   }
 `

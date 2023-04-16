@@ -17,16 +17,16 @@ export const Container = styled.div`
     margin-bottom: 7.3rem;
   }
 
+  img {
+    height: 4.3rem;
+  }
+
   > .form {
     display: flex;
     flex-direction: column;
     text-align: center;
 
-    img {
-      height: 4.3rem;
-    }
-
-    input,
+    > div,
     button {
       margin-bottom: 3.2rem;
     }

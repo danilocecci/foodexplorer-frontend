@@ -2,25 +2,28 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 100vh;
-
   display: grid;
-  grid-template-rows: 11.4rem auto 7.7rem;
+  grid-template-rows: 11.4rem auto;
   grid-template-areas:
     'header'
-    'content'
-    'footer';
+    'content';
   text-align: center;
 
   background: ${({ theme }) => theme.COLORS.BACKGROUND};
   color: ${({ theme }) => theme.COLORS.TITLEBTNTAG};
 
-  overflow-y: auto;
-
   .content {
+    position: relative;
+
+    height: 100%;
+    overflow-y: auto;
+
     width: 100vw;
     grid-area: 'content';
 
-    margin-top: 1.5rem;
+    > div {
+      margin-top: 1.5rem;
+    }
     padding-inline: 2.4rem;
 
     font-family: ${({ theme }) => theme.FONT.POPPINS};
@@ -48,9 +51,12 @@ export const Container = styled.div`
         }
       }
     }
-  }
 
-  footer {
-    margin-top: 2.4rem;
+    footer {
+      margin-top: 2.4rem;
+      margin-inline: -2.4rem;
+
+      padding: 2.7rem 2.9rem;
+    }
   }
 `
