@@ -7,7 +7,7 @@ import { MealCard } from '../../components/MealCard'
 
 
 export function Home() {
-  let admin = false
+  let admin = true
 
   return (
     <Container className='content'>
@@ -16,11 +16,11 @@ export function Home() {
         <Banner className='banner'/>
         <div className='meals'>
           <h2>Refeições</h2>
-          <div className="carousel">
-            <MealCard className='mealCard'/>
-            <MealCard className='mealCard'/>
-            <MealCard className='mealCard'/>
-          </div>
+            <div className="carousel">
+              <MealCard className='mealCard'/>
+              <MealCard className='mealCard'/>
+              <MealCard className='mealCard'/>
+            </div>
           <h2>Pratos principais</h2>
           <div className="carousel">
             <MealCard className='mealCard'/>

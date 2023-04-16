@@ -9,12 +9,9 @@ export const Container = styled.div`
     'content';
   text-align: center;
 
-  background: ${({ theme }) => theme.COLORS.BACKGROUND};
   color: ${({ theme }) => theme.COLORS.TITLEBTNTAG};
 
   .content {
-    position: relative;
-
     height: 100%;
     overflow-y: auto;
 
@@ -24,6 +21,7 @@ export const Container = styled.div`
     > div {
       margin-top: 1.5rem;
     }
+
     padding-inline: 2.4rem;
 
     font-family: ${({ theme }) => theme.FONT.POPPINS};
@@ -38,6 +36,7 @@ export const Container = styled.div`
       margin-top: 6.2rem;
 
       .carousel {
+        position: relative;
         width: 100%;
         display: -webkit-inline-box;
         gap: 1.6rem;

@@ -8,7 +8,7 @@ import { Logo } from '../Logo'
 export function Header({menu, admin}){
   return(
     <Container>
-      {!admin ? 
+      {admin ? 
       menu ? <div className='menu'><img src={closeSvg} alt="Botão de menu"  />Menu</div>
       : <>
         <img src={menuSvg} alt="Botão de menu" />
