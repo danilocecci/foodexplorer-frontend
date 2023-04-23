@@ -35,6 +35,22 @@ export const Container = styled.header`
   > .menu {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     gap: 1.6rem;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  .headerAdmin {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    > div {
+      margin-left: auto;
+    }
   }
 `

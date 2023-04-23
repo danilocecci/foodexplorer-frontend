@@ -1,4 +1,5 @@
 import { Container } from "./styles"
+import { Link } from 'react-router-dom'
 
 import menuSvg from '../../assets/menu.svg'
 import receiptSvg from '../../assets/receipt.svg'
@@ -9,15 +10,15 @@ export function Header({menu, admin}){
   return(
     <Container>
       {admin ? 
-      menu ? <div className='menu'><img src={closeSvg} alt="Botão de menu"  />Menu</div>
+      menu ? <div className='menu'><Link to='/menu'><img src={closeSvg} alt="Botão de menu" /></Link>Menu</div>
+      : <div className="headerAdmin">
+          <Link to='/menu'><img src={menuSvg} alt="Botão de menu" /></Link>
+          <Logo />
+          <span>admin</span>
+      </div> :
+      menu ? <div className='menu'><Link to='/'><img src={closeSvg} alt="Botão de menu"  /></Link>Menu</div>
       : <>
-        <img src={menuSvg} alt="Botão de menu" />
-        <Logo />
-        <span>admin</span>
-      </> :
-      menu ? <div className='menu'><img src={closeSvg} alt="Botão de menu"  />Menu</div>
-      : <>
-        <img src={menuSvg} alt="Botão de menu" />
+        <Link to='/menu'><img src={menuSvg} alt="Botão de menu" /></Link>
         <Logo />
         <img src={receiptSvg} alt="Botão de pedidos" />
       </>

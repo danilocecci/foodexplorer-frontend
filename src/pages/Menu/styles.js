@@ -18,6 +18,7 @@ export const Container = styled.div`
     > a {
       display: block;
 
+      color: ${({ theme }) => theme.COLORS.SECONDARYWHITE};
       font-size: 2.4rem;
 
       padding: 1rem;

@@ -1,4 +1,5 @@
 import { Container } from "./styles"
+import { Link } from 'react-router-dom'
 
 import parmaSvg from '../../assets/parma.svg'
 import minusSvg from '../../assets/minus.svg'
@@ -18,7 +19,7 @@ export function MealDetails(){
       <Header />
       <div className="page">
         <div className="content">
-        <a href="#"><img src={caretLeftSvg}></img>voltar</a>
+        <Link to='/'><img src={caretLeftSvg}></img>voltar</Link>
         <div className="mealDetailsContent">
           <img src={parmaSvg} alt="Imagem do prato Parma" />
           <h2>Parma</h2>

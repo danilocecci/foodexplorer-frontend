@@ -1,4 +1,5 @@
 import { Container } from './styles'
+import { Link } from 'react-router-dom'
 
 import { Logo } from '../../components/Logo'
 import { Input } from '../../components/Input'
@@ -12,7 +13,7 @@ export function SignUp() {
       <Input placeholder="Exemplo: exemplo@exemplo.com.br" label="Email" id="email" type="email" />
       <Input placeholder="No mínimo 6 caracteres" label="Senha" id="senha" type='password' />
       <Button title="Criar conta"/>
-      <a href="#">Já tenho uma conta</a>
+      <Link to='/'>Já tenho uma conta</Link>
     </Container>
   )
 }

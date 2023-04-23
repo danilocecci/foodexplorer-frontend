@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Container } from './styles'
 
@@ -32,7 +33,7 @@ export function EditMeal() {
       <Header admin />
       <div className="pageMealContent">
         <div className="newMealContent">
-          <a href="#"><img src={caretLeftSvg}></img>voltar</a>
+          <Link to='/'><img src={caretLeftSvg}></img>voltar</Link>
           <h3>Editar prato</h3>
           <p>Imagem do prato</p>
           <label htmlFor='inputMealImg'>

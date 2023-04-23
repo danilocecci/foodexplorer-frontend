@@ -24,7 +24,7 @@ export function Home() {
             <MealCard className='mealCard'/>
             <MealCard className='mealCard'/>
           </div>
-          <h2>Sobremesas e bebidas</h2>
+          <h2>Bebidas</h2>
           <div className="carousel">
             <MealCard className='mealCard'/>
           </div>
