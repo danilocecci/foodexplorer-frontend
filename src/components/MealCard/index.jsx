@@ -9,7 +9,7 @@ import parmaSvg from '../../assets/parma.svg'
 import { Button } from '../Button'
 
 export function MealCard({src, ...rest}){
-  let admin = true
+  let admin = false
 
   return(
     <Container {...rest}>

@@ -7,7 +7,7 @@ import { Footer } from '../../components/Footer'
 import searchSvg from '../../assets/search.svg'
 
 export function Menu() {
-  let admin = true
+  let admin = false
 
   return (
     <Container>

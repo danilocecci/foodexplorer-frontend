@@ -7,11 +7,9 @@ import { MealCard } from '../../components/MealCard'
 
 
 export function Home() {
-  let admin = true
-
   return (
     <Container className='content'>
-      <Header admin={admin} />
+      <Header />
       <div className='content'>
         <Banner className='banner'/>
         <div className='meals'>

@@ -7,6 +7,10 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 0.8rem;
 
+  label {
+    color: ${({ theme }) => theme.COLORS.LABEL};
+  }
+
   .inputWrapper {
     :focus-within {
       outline: ${({ theme }) => theme.COLORS.OUTLINE} solid 0.2rem;
@@ -41,8 +45,5 @@ export const Container = styled.div`
     :focus {
       outline: none;
     }
-    /* :focus {
-      outline: ${({ theme }) => theme.COLORS.OUTLINE} solid 0.2rem;
-    } */
   }
 `

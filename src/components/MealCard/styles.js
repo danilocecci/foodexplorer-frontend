@@ -3,8 +3,12 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   position: relative;
+
   padding: 1.6rem 2.4rem;
+
+  min-height: 29.2rem;
 
   border-radius: 0.8rem;
   border: 1px solid ${({ theme }) => theme.COLORS.CARDBORDER};

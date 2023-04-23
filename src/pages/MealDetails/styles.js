@@ -5,10 +5,13 @@ export const Container = styled.div`
   flex-direction: column;
   height: 100vh;
 
-  .content {
-    height: 100vh;
-    padding: 3.6rem 5.6rem;
+  .page {
+    height: 100%;
     overflow-y: auto;
+  }
+
+  .content {
+    padding: 3.6rem 5.6rem;
 
     > a,
     h2,
@@ -60,13 +63,15 @@ export const Container = styled.div`
       }
 
       .mealDetailsButtons {
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 1.6rem;
 
         > button {
-          width: min(18.8rem);
+          width: 100%;
+          /* min-width: 18.8rem; */
         }
       }
     }
