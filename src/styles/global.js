@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
   ::-webkit-scrollbar {
-    /* display: none; */
+    display: none;
   }
 
   :root {

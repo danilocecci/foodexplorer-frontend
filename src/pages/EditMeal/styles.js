@@ -35,21 +35,34 @@ export const Container = styled.div`
     h3 {
       font-family: ${({ theme }) => theme.FONT.POPPINS};
       font-size: 3.2rem;
-      margin-bottom: 3.6rem;
+      margin-bottom: 3.2rem;
     }
 
-    h3 ~ div {
+    label:is(:first-child) ~ * {
       margin-bottom: 2.4rem;
     }
 
-    > p {
+    > .col-2 label:first-child {
+      margin-top: 2.4rem;
+    }
+
+    .mealImage > label[for='inputMealImg'] {
+      padding: 1.2rem 3.2rem;
+    }
+
+    .col-2 > p,
+    .col-3 > p,
+    .mealImage > p,
+    .ingredientsInput > p {
       font-family: ${({ theme }) => theme.FONT.ROBOTO};
       color: ${({ theme }) => theme.COLORS.LABEL};
 
       margin-bottom: 0.8rem;
     }
 
-    > label {
+    .col-2 > label,
+    .col-3 > label,
+    .mealImage > label {
       width: 100%;
 
       display: flex;
@@ -63,17 +76,32 @@ export const Container = styled.div`
       background-color: ${({ theme }) => theme.COLORS.INPUTBACKGROUND};
     }
 
-    > div > label {
+    .col-2 > div > label,
+    .col-3 > div > label {
       color: ${({ theme }) => theme.COLORS.LABEL};
     }
 
-    > label + div {
+    .mealImage > label + div {
       display: none;
     }
 
-    > button {
-      width: 100%;
+    .buttonsWrapper {
+      display: flex;
+      gap: 3.2rem;
+
       margin-bottom: 5.3rem;
+
+      button {
+        width: 100%;
+      }
+
+      button:first-child {
+        background-color: ${({ theme }) => theme.COLORS.INPUTBACKGROUND};
+      }
+
+      button:last-child {
+        background-color: ${({ theme }) => theme.COLORS.INSERTMEALBTN};
+      }
     }
 
     .tagWrapper {
@@ -81,6 +109,7 @@ export const Container = styled.div`
       flex-wrap: wrap;
 
       width: 100%;
+      height: 4.8rem;
 
       background-color: ${({ theme }) => theme.COLORS.INPUTBACKGROUND};
 
@@ -88,6 +117,10 @@ export const Container = styled.div`
       /* outline: 1px solid red; */
 
       border-radius: 0.8rem;
+
+      overflow: auto;
+
+      gap: 1.6rem;
     }
 
     select,
@@ -132,19 +165,62 @@ export const Container = styled.div`
         resize: none;
       }
     }
-  }
-  .buttonsWrapper {
-    display: flex;
-    gap: 3.2rem;
 
     > button {
-      width: 100%;
-
-      color: ${({ theme }) => theme.COLORS.TITLEBTNTAG};
       background-color: ${({ theme }) => theme.COLORS.INSERTMEALBTN};
+    }
+  }
 
-      :first-child {
-        background-color: ${({ theme }) => theme.COLORS.INPUTBACKGROUND};
+  @media (min-width: 820px) {
+    .pageMealContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .newMealContent,
+    footer {
+      padding-inline: 12.3rem;
+    }
+
+    .newMealContent {
+      .col-2,
+      .col-3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 3.2rem;
+
+        > * {
+          width: 100%;
+          white-space: nowrap;
+        }
+      }
+
+      > .col-3 > div > label[for='inputMealImg'],
+      > .col-3 > div > .inputWrapper,
+      > .col-3 > div > select[id='selectInput'],
+      > .col-2 .inputWrapper:nth-child(2) {
+        margin-bottom: 0;
+      }
+
+      > .col-2 > div > label[for='inputMealPrice'] {
+        margin-top: 0;
+      }
+
+      .col-2 {
+        margin-block: 3.2rem;
+      }
+
+      .buttonsWrapper {
+        justify-content: end;
+        gap: 3.2rem;
+
+        button {
+          width: 17.2rem;
+          height: 4.8rem;
+        }
       }
     }
   }

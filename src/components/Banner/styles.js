@@ -30,7 +30,10 @@ export const Container = styled.div`
   }
 
   h3 {
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
+    font-size: clamp(1rem, 1.8rem, 4rem);
+
+    white-space: nowrap;
   }
 
   p {
@@ -47,5 +50,42 @@ export const Container = styled.div`
     right: 0;
 
     z-index: 0;
+  }
+
+  @media (min-width: 535px) {
+    .merchantText {
+      width: fit-content;
+      right: auto;
+      bottom: auto;
+      margin-left: 26vw;
+      margin-top: 5.5rem;
+    }
+  }
+
+  @media (min-width: 820px) {
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > img {
+      height: 20vw;
+    }
+
+    .merchantText {
+      margin-left: 15rem;
+
+      > h3 {
+        font-size: 2vw;
+      }
+      p {
+        text-align: justify;
+        font-size: 1.2vw;
+      }
+    }
+
+    ::after {
+      height: 16vw;
+    }
   }
 `

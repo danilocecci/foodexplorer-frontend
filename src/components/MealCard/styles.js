@@ -46,8 +46,17 @@ export const Container = styled.div`
       font-size: 1.4rem;
     }
 
+    .description {
+      display: none;
+    }
+
     > span {
       color: ${({ theme }) => theme.COLORS.BLUEADMINPRICE};
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
     }
 
     p,
@@ -67,6 +76,17 @@ export const Container = styled.div`
     .button {
       border: 1px solid red;
       width: 100%;
+    }
+  }
+
+  @media (min-width: 820px) {
+    .description {
+      display: block !important;
+
+      font-family: ${({ theme }) => theme.FONT.ROBOTO} !important;
+      font-size: 1.4rem !important;
+      line-height: 2.24rem !important;
+      color: ${({ theme }) => theme.COLORS.MEALDESCRIPTION} !important;
     }
   }
 `

@@ -21,7 +21,7 @@ export const Container = styled.div`
     height: 4.3rem;
   }
 
-  > .form {
+  > form {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -34,9 +34,32 @@ export const Container = styled.div`
     a {
       color: ${({ theme }) => theme.COLORS.TITLEBTNTAG};
     }
+  }
 
-    /* background-color: ${({ theme }) => theme.COLORS.HEADERBACKGROUND};
+  @media (min-width: 820px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 
-    padding: 15rem; */
+    padding: 0;
+
+    height: 100vh;
+
+    form {
+      min-width: 48rem;
+      padding: 6.4rem;
+
+      background-color: ${({ theme }) => theme.COLORS.HEADERBACKGROUND};
+
+      border-radius: 1.6rem;
+
+      ::before {
+        content: 'Faça login';
+        font-family: ${({ theme }) => theme.FONT.POPPINS};
+        font-size: 3.2rem;
+
+        margin-bottom: 3.2rem;
+      }
+    }
   }
 `

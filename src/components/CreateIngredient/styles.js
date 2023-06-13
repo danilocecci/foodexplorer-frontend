@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  height: 3.2rem;
+  gap: 0.8rem;
 
   padding: 0.8rem 1.6rem;
 
@@ -34,6 +36,7 @@ export const Container = styled.div`
   button {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     background: transparent;
     border: none;

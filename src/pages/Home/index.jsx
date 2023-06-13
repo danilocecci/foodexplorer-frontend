@@ -1,4 +1,5 @@
 import { Container } from './styles'
+import { useAuth } from '../../hooks/auth'
 
 import { Header } from '../../components/Header'
 import { Banner } from '../../components/Banner'
@@ -7,9 +8,11 @@ import { MealCard } from '../../components/MealCard'
 
 
 export function Home() {
+  const { user } = useAuth()
+
   return (
     <Container className='content'>
-      <Header />
+      <Header admin={user.is_admin}/>
       <div className='content'>
         <Banner className='banner'/>
         <div className='meals'>

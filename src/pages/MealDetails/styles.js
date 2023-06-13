@@ -8,6 +8,10 @@ export const Container = styled.div`
   .page {
     height: 100%;
     overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .content {
@@ -29,7 +33,8 @@ export const Container = styled.div`
       font-size: 2.4rem;
     }
 
-    .mealDetailsContent {
+    .mealDetailsContent,
+    .mealsInfo {
       position: relative;
 
       display: flex;
@@ -70,10 +75,66 @@ export const Container = styled.div`
         gap: 1.6rem;
 
         > button {
-          width: 100%;
-          /* min-width: 18.8rem; */
+          width: 18.8rem;
         }
       }
+    }
+  }
+
+  footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+
+  @media (min-width: 820px) {
+    .content {
+      padding-inline: 12.3rem;
+    }
+
+    .content > .mealDetailsContent {
+      flex-direction: row;
+
+      margin-top: 4.2rem;
+
+      > img {
+        width: 38.9rem;
+        margin-right: 4.8rem;
+      }
+
+      .mealsInfo {
+        display: flex;
+        align-items: flex-start;
+
+        width: 100%;
+
+        h2 {
+          font-size: 4rem;
+        }
+
+        p {
+          font-size: 2.4rem;
+        }
+
+        .tagsWrapper {
+          justify-content: flex-start;
+        }
+
+        .mealDetailsButtons {
+          justify-content: flex-start;
+          img:nth-child(3) {
+            margin-right: 1.7rem;
+          }
+        }
+
+        span {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    footer {
+      padding-inline: 12.3rem;
     }
   }
 `
