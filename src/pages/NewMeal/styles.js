@@ -199,7 +199,7 @@ export const Container = styled.div`
         margin-block: 3.2rem;
       }
 
-      .pageMealContent > .newMealContent > button:not(input + button) {
+      > button {
         width: 17.2rem;
         height: 4.8rem;
 
