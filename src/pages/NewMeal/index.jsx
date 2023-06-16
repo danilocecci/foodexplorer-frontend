@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks/auth'
 
 import { Container } from './styles'
@@ -23,6 +23,7 @@ export function NewMeal() {
   const [description, setDescription] = useState('')
   const [ingredients, setIngredients] = useState([])
   const { user } = useAuth()
+  const navigate = useNavigate()
 
   function handleAddIngredient(e){
     if(newIngredient.length < 3 ){
@@ -65,8 +66,9 @@ export function NewMeal() {
       ingredients,
       price,
       description
-    })
+    }, {headers: {'Content-Type': 'multipart/form-data'}})
     alert('Prato cadastrado com sucesso!')
+    navigate(-1)
   }
 
   return (
@@ -89,6 +91,7 @@ export function NewMeal() {
             <div className="selectWrapper">
               <label htmlFor="selectInput">Categoria</label>
               <select id="selectInput" onChange={e => setCategory(e.target.value)}>
+                <option value="selecionar">Selecionar...</option>
                 <option value="refeicao">Refeição</option>
                 <option value="principal">Prato principal</option>
                 <option value="bebida">Bebida</option>

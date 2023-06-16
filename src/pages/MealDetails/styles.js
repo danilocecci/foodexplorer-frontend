@@ -77,6 +77,12 @@ export const Container = styled.div`
         > button {
           width: 18.8rem;
         }
+
+        > img {
+          padding-block: 11px;
+          align-items: center;
+          cursor: pointer;
+        }
       }
     }
   }
