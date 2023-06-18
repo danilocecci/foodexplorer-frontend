@@ -12,7 +12,7 @@ import forkKnifeSvg from '../../assets/forkKnife.svg'
 import { Logo } from '../Logo'
 import { Input } from '../Input'
 
-export function Header({menu, admin}){
+export function Header({menu, admin, searchTerm}){
   const { signOut } = useAuth()
 
   return(
@@ -25,7 +25,7 @@ export function Header({menu, admin}){
             <Logo />
             <span>admin</span>
           </div>
-          <Input className='searchInput' icon={searchSvg} placeholder='Busque por pratos ou ingredientes' />
+          <Input className='searchInput' icon={searchSvg} placeholder='Busque por pratos ou ingredientes' onChange={e => searchTerm(e.target.value)} />
           <Link to={admin ? '/new' : '#'}>
             <div className="orderedMeals">
               {!admin ? <img src={receiptSvg} alt="Botão de pedidos" /> : <img className="imgAdmin" src={forkKnifeSvg} alt="Botaõ de novo prato" title="Novo prato"/>}

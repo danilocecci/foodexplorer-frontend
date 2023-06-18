@@ -22,6 +22,8 @@ export const Container = styled.div`
     height: 2.2rem;
     right: 1.6rem;
     top: 1.6rem;
+
+    cursor: pointer;
   }
 
   > .dish {
@@ -76,6 +78,10 @@ export const Container = styled.div`
     .button {
       border: 1px solid red;
       width: 100%;
+    }
+    > img,
+    p {
+      cursor: pointer;
     }
   }
 

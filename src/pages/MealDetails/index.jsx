@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { Container } from "./styles"
 import { Link } from 'react-router-dom'
@@ -21,6 +21,7 @@ export function MealDetails(){
   const { user } = useAuth()
   
   const params = useParams()
+  const navigate = useNavigate()
 
   const [quantity, setQuantity] = useState(1)
   const [image, setImage] = useState(null)
@@ -72,12 +73,12 @@ export function MealDetails(){
                  })}
             </div>
             <div className="mealDetailsButtons">
-            {user.is_admin ? <Button title="Editar prato" /> :
+            {user.is_admin ? <Button title="Editar prato" onClick={() => navigate(`/edit/${params.id}`)} /> :
               <> 
                 <img src={minusSvg} alt="Diminuir quantidade" onClick={handleSub} />
                 <span className="quantity">{String(quantity).padStart(2,'0')}</span>
                 <img src={plusSvg} alt="Diminuir quantidade" onClick={handleAdd} />
-                <Button title={`incluir • R$ ${Intl.NumberFormat('pt-BR').format(price)}`} icon={receiptSvg}/>
+                <Button title={`incluir • ${Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(price)}`} icon={receiptSvg}/>
               </>
             }
             </div>

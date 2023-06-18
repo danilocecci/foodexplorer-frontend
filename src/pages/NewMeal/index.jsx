@@ -50,7 +50,6 @@ export function NewMeal() {
   }
 
   async function handleNewMeal() {
-    console.log(image, name, category, price, description, ingredients)
     if(!image || !name || !category || !price || !description || !ingredients){
       return alert('Por favor, preencha todos os campos!')
     }
@@ -67,8 +66,16 @@ export function NewMeal() {
       price,
       description
     }, {headers: {'Content-Type': 'multipart/form-data'}})
-    alert('Prato cadastrado com sucesso!')
-    navigate(-1)
+    .then(() => {
+      alert('Prato cadastrado com sucesso!')
+      navigate(-1)
+    }).catch((error) => {
+      if(error.response) {
+        alert(error.response.data.message)
+      } else {
+        alert('Erro ao adicionar prato!')
+      }
+    })
   }
 
   return (
@@ -114,7 +121,7 @@ export function NewMeal() {
                     onClick={handleAddIngredient} />
               </div>
             </div>
-            <Input placeholder="R$ 00,00" label="Preço" id="inputMealPrice" onChange={e => setPrice(e.target.value)} />
+            <Input placeholder="R$ 00,00" label="Preço" id="inputMealPrice" type='number' onChange={e => setPrice(e.target.value)} />
           </div>
           <div className='textareaWrapper'>
             <label htmlFor="textareaInput">Descrição</label>
