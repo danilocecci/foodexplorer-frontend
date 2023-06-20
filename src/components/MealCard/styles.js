@@ -35,6 +35,7 @@ export const Container = styled.div`
 
     > img {
       height: 8.8rem;
+      object-fit: contain;
     }
 
     > img,

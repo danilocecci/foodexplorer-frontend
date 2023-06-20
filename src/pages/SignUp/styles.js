@@ -13,6 +13,19 @@ export const Container = styled.div`
     font-size: 3.7rem;
 
     margin-bottom: 7.3rem;
+
+    animation: slide 1s;
+
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   }
 
   img {
@@ -31,6 +44,19 @@ export const Container = styled.div`
 
     a {
       color: ${({ theme }) => theme.COLORS.TITLEBTNTAG};
+    }
+
+    animation: fadeIn 1s;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   }
 
