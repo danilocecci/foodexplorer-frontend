@@ -41,7 +41,7 @@ export function Header({menu, admin, searchTerm}){
       <>
         <Link to='/menu'><img src={menuSvg} alt="Botão de menu" /></Link>
         <Logo />
-        <Input className='searchInput' icon={searchSvg} placeholder='Busque por pratos ou ingredientes' />
+        <Input className='searchInput' icon={searchSvg} placeholder='Busque por pratos ou ingredientes' onChange={e => searchTerm(e.target.value)}/>
         <div className="orderedMeals">
           <img src={receiptSvg} alt="Botão de pedidos" />
           <p className="orderedMealsTitle">{admin ? 'Novo prato' : 'Pedidos (0)'}</p>

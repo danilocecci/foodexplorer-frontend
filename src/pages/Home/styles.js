@@ -58,6 +58,15 @@ export const Container = styled.div`
     }
   }
 
+  .leftArrow,
+  .rightArrow {
+    display: none;
+  }
+
+  .slider {
+    display: flex;
+  }
+
   @media (min-width: 820px) {
     .content {
       padding-inline: 12.3rem;
@@ -107,6 +116,53 @@ export const Container = styled.div`
           }
         }
       }
+    }
+    section {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .carousel {
+      scroll-behavior: smooth;
+    }
+
+    .leftArrow,
+    .rightArrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: absolute;
+      width: 10rem;
+      height: 100%;
+
+      border: none;
+
+      background-color: black;
+
+      z-index: 1;
+
+      font-size: 3rem;
+      cursor: pointer;
+    }
+
+    .leftArrow {
+      left: 0;
+      background: linear-gradient(
+        90deg,
+        ${({ theme }) => theme.COLORS.BACKGROUND},
+        transparent
+      );
+    }
+
+    .rightArrow {
+      right: 0;
+      background: linear-gradient(
+        -90deg,
+        ${({ theme }) => theme.COLORS.BACKGROUND},
+        transparent
+      );
     }
   }
 `
