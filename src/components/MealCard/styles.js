@@ -74,6 +74,12 @@ export const Container = styled.div`
       gap: 1.4rem;
 
       margin-bottom: 1.6rem;
+
+      > img {
+        padding-block: 11px;
+        align-items: center;
+        cursor: pointer;
+      }
     }
 
     .button {

@@ -99,7 +99,7 @@ export function Home() {
             </div>
             <div className="carousel" ref={slider}>
               {
-                meals.filter(meal => meal.category == 'Bebidas').map(meal => (
+                meals.filter(meal => meal.category == 'bebida').map(meal => (
                   <MealCard className='mealCard' key={String(meal.id)} data={meal}/>
                 ))
               }

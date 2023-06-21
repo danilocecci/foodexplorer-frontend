@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Container } from "./styles"
 import { useAuth } from '../../hooks/auth'
 import { useNavigate } from "react-router-dom"
@@ -16,6 +17,17 @@ export function MealCard({src, data, ...rest}){
   const {user} = useAuth()
   const navigate = useNavigate()
   const imageURL = `${api.defaults.baseURL}/files/${data.image}`
+  const [quantity, setQuantity] = useState(1)
+
+  function handleAdd(){
+    setQuantity(quantity + 1)
+  }
+
+  function handleSub(){
+    if(quantity > 1){
+      setQuantity(quantity - 1)
+    }
+  }
 
   return(
     <Container {...rest}>
@@ -28,9 +40,9 @@ export function MealCard({src, data, ...rest}){
         {!user.is_admin &&
         <div className="actions">
           <div className="quantity">
-            <img src={minusSvg} alt="Diminuir quantidade" />
-            <span>01</span>
-            <img src={plusSvg} alt="Aumentar quantidade" />
+            <img src={minusSvg} alt="Diminuir quantidade" onClick={handleSub} />
+            <span>{String(quantity).padStart(2,'0')}</span>
+            <img src={plusSvg} alt="Aumentar quantidade" onClick={handleAdd} />
           </div>
         <Button title='incluir' />
        </div>}

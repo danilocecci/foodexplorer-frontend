@@ -121,7 +121,7 @@ export function EditMeal() {
               <select id="selectInput" value={category.toLowerCase()} onChange={(e) => setCategory(e.target.value)} defaultValue={category}>
                 <option value="refeicao">Refeição</option>
                 <option value="principal">Prato principal</option>
-                <option value="bebidas">Bebida</option>
+                <option value="bebida">Bebida</option>
               </select>
             </div>
           </div>
