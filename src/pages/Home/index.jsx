@@ -43,11 +43,9 @@ export function Home() {
   }
 
   useEffect(() => {
-    console.log('teste')
     async function fetchAllMeals(){
       const handleMeals = await api.get(`/meals?searchTerm=${searchTerm}`)
       setMeals(handleMeals.data)
-      console.log('pegando meals')
     }
     fetchAllMeals()
   },[searchTerm])
