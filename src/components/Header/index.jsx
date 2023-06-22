@@ -1,5 +1,5 @@
 import { Container } from "./styles"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks/auth'
 
 import menuSvg from '../../assets/menu.svg'
@@ -14,6 +14,7 @@ import { Input } from '../Input'
 
 export function Header({menu, admin, searchTerm}){
   const { signOut } = useAuth()
+  const navigate = useNavigate()
 
   return(
     <Container>
@@ -33,7 +34,10 @@ export function Header({menu, admin, searchTerm}){
             </div>
           </Link>
 
-          <div className="signOut" onClick={signOut}><img src={signOutSvg} alt="Botão de sair" /></div>
+          <div className="signOut" onClick={() => {
+            signOut()
+            navigate('/')
+            }}><img src={signOutSvg} alt="Botão de sair" /></div>
         </>
        :
       menu ? <div className='menu'><Link to='/'><img src={closeSvg} alt="Botão de menu"  /></Link>Menu</div>
