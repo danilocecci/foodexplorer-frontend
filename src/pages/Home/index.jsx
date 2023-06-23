@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { Container } from './styles'
 import { useAuth } from '../../hooks/auth'
@@ -15,6 +16,11 @@ import rightArrowSvg from '../../assets/rightArrow.svg'
 
 export function Home() {
   const { user } = useAuth()
+  const navigate = useNavigate()
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const menuSearch = urlParams.get('searchTerm')
+
   const [meals, setMeals] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -44,8 +50,15 @@ export function Home() {
 
   useEffect(() => {
     async function fetchAllMeals(){
+      
       const handleMeals = await api.get(`/meals?searchTerm=${searchTerm}`)
       setMeals(handleMeals.data)
+
+      if(menuSearch){
+        const handleMealsWithMenu = await api.get(`/meals?searchTerm=${menuSearch}`)
+        setMeals(handleMealsWithMenu.data)
+        navigate('/')
+        }
     }
     fetchAllMeals()
   },[searchTerm])

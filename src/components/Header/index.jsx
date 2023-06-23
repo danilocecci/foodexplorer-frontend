@@ -40,7 +40,7 @@ export function Header({menu, admin, searchTerm}){
             }}><img src={signOutSvg} alt="Botão de sair" /></div>
         </>
        :
-      menu ? <div className='menu'><Link to='/'><img src={closeSvg} alt="Botão de menu"  /></Link>Menu</div>
+      menu ? <div className='menu'><Link to={`/?searchTerm=${searchTerm}`}><img src={closeSvg} alt="Botão de menu"  /></Link>Menu</div>
       : 
       <>
         <Link to='/menu'><img src={menuSvg} alt="Botão de menu" /></Link>
